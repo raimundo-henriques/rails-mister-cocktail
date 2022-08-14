@@ -34,3 +34,19 @@ puts "Creating cocktails"
   cocktail = Cocktail.create!(name: cocktail_json["drinks"][0]["strDrink"])
   puts "Created #{cocktail.name}"
 end
+
+puts "Creating doses"
+
+Cocktail.all.each do |cocktail|
+  descriptions = ["2cl", "4cl", "6cl", "10cl"]
+  dose = Dose.create!(description: descriptions.sample, cocktail: cocktail, ingredient: Ingredient.all.sample)
+  puts "Created dose of #{dose.ingredient.name} (#{dose.description}) for #{cocktail.name}"
+  dose = Dose.create!(description: descriptions.sample, cocktail: cocktail, ingredient: Ingredient.all.sample)
+  puts "Created dose of #{dose.ingredient.name} (#{dose.description}) for #{cocktail.name}"
+  dose = Dose.create!(description: descriptions.sample, cocktail: cocktail, ingredient: Ingredient.all.sample)
+  puts "Created dose of #{dose.ingredient.name} (#{dose.description}) for #{cocktail.name}"
+  dose = Dose.create!(description: descriptions.sample, cocktail: cocktail, ingredient: Ingredient.all.sample)
+  puts "Created dose of #{dose.ingredient.name} (#{dose.description}) for #{cocktail.name}"
+end
+
+puts "Created doses"
