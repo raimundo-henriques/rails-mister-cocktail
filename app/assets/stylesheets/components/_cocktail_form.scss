@@ -1,0 +1,10 @@
+.cocktail-form {
+  background-color: black;
+  border-color: $yellow;
+
+  &:focus {
+    background-color: black;
+    color: $yellow;
+    border-color: $yellow;
+  }
+}
