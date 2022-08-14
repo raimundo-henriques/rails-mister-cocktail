@@ -1,0 +1,10 @@
+.search-bar {
+  background-color: transparent;
+  border-color: $yellow;
+
+  &:focus {
+    background-color: transparent;
+    color: $yellow;
+    border-color: $yellow;
+  }
+}
