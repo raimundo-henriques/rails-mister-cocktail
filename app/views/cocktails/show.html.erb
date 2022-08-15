@@ -9,6 +9,9 @@
           <ul>
             <li>
               <%= dose.description %> <%= dose.ingredient.name %>
+              <%= link_to dose_path(dose), data: {method: :delete, confirm: "Are you sure?"} do  %>
+                <i class="fa-solid fa-circle-xmark"></i>
+              <% end %>
             </li>
           </ul>
         <% end %>
