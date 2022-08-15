@@ -1,5 +1,6 @@
 <%= simple_form_for(cocktail) do |f| %>
   <%= f.input :name, input_html: { class: "cocktail-form my-3" } %>
+  <%= f.input :picture, input_html: { class: "cocktail-form my-3" }%>
   <div class="d-flex justify-content-center">
     <%= f.submit class:'btn btn-info my-5' %>
   </div>

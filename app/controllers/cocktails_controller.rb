@@ -3,13 +3,14 @@ class CocktailsController < ApplicationController
 
   def index
     if params[:query].present?
-      @cocktails = Cocktail.where("name LIKE ?", "%#{params[:query]}%")
+      @cocktails = Cocktail.where("name LIKE ?", "%#{params[:query].capitalize}%")
     else
       @cocktails = Cocktail.all
     end
   end
 
   def show
+    @dose = Dose.new
   end
 
   def new
@@ -32,6 +33,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :picture)
   end
 end

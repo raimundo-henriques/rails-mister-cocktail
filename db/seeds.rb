@@ -31,7 +31,7 @@ puts "Creating cocktails"
   random_cocktail_url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
   cocktail_serialized = URI.open(random_cocktail_url).read
   cocktail_json = JSON.parse(cocktail_serialized)
-  cocktail = Cocktail.create!(name: cocktail_json["drinks"][0]["strDrink"])
+  cocktail = Cocktail.create!(name: cocktail_json["drinks"][0]["strDrink"], picture: cocktail_json["drinks"][0]["strDrinkThumb"])
   puts "Created #{cocktail.name}"
 end
 
