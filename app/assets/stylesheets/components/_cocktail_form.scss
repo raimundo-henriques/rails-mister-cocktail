@@ -1,6 +1,19 @@
 .cocktail-form {
   background-color: black;
   border-color: $yellow;
+  color: $yellow;
+
+  &:focus {
+    background-color: black;
+    color: $yellow;
+    border-color: $yellow;
+  }
+}
+
+.select {
+  background-color: black;
+  border-color: $yellow;
+  color: $yellow;
 
   &:focus {
     background-color: black;

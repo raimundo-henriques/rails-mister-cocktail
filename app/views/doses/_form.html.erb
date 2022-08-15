@@ -1,0 +1,7 @@
+<%= simple_form_for [cocktail, dose] do |f| %>
+  <%= f.input :description, input_html: { class: "cocktail-form my-3" } %>
+  <%= f.association :ingredient, prompt: "Select an ingredient", input_html: { data: { controller: "select", class: "select" } } %>
+  <div class="d-flex justify-content-center">
+    <%= f.submit class:'btn btn-info my-5' %>
+  </div>
+<% end %>
