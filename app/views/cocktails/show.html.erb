@@ -18,10 +18,31 @@
           </ul>
         <% end %>
       </div>
-      <div class="pb-5 text-center">
+      <div class="pb-3 text-center">
         <h5>Add a dose</h5>
         <%= render "doses/form", cocktail: @cocktail, dose: @dose %>
         <%# <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class:'btn btn-info' %>
+      </div>
+      <div class="pb-5 text-center">
+        <h5 class="pb-5">Reviews</h5>
+        <% if @cocktail.reviews.empty? %>
+          <p>There are no reviews yet. Be the first!</p>
+        <% else %>
+          <% @cocktail.reviews.each do |review| %>
+            <div class="pb-2">
+              <% review.rating.times do %>
+                <i class="fa-brands fa-galactic-republic"></i>
+              <% end %>
+            </div>
+            <div class="pb-4">
+              <%= review.comment %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="pb-3 text-center">
+        <h5>New Review</h5>
+        <%= render "reviews/form", cocktail: @cocktail, review: @review %>
       </div>
       <div class="pb-5 text-center">
         <%= link_to "Back to all cocktails", cocktails_path, class:'btn btn-outline-info' %>
